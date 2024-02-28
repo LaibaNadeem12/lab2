@@ -15,9 +15,21 @@ def choose_difficulty():
     - str: Valid difficulty levels are ('easy', 'medium', 'hard').
     """
     #------------------------
-    # Add your code here
+    total_points: 300
+    d_level= input("please, choose the difficulty level (EASY, MEDIUM, HARD): ")
+
+    if d_level == "easy":
+        points =  total_points * 1.5
+    elif d_level == "medium":
+        points = total_points * 1.0
+    elif d_level == "hard":
+        points = total_points * 0.5
+
+    return int(points)
+
+
     #------------------------
-    raise NotImplementedError("This function is not implemented yet.")
+
     #------------------------
 
 #---------------------------------------
@@ -34,9 +46,17 @@ def display_leaderboard(leaderboard):
     The function sorts the leaderboard by scores in descending order and prints the names and scores of the top players. If the leaderboard is empty, it prints a message indicating that there are no scores to display.
     """
     #------------------------
-    # Add your code here
+    if not leaderboard:
+        print("there are no scores to display")
+        return
+    decend_board = sorted(leaderboard.items(), key=lambda x: x[1], reverse=True)
+
+    print("LEADERBOARD")
+    for player_name, score in leaderboard.items():
+        print(f"(player_name): (score) points")
+
     #------------------------
-    raise NotImplementedError("This function is not implemented yet.")
+
     #------------------------
 
 #---------------------------------------
@@ -53,9 +73,11 @@ def save_score(player_name, score, file_path='scores.txt'):
     Returns: None
     """
     #------------------------
-    # Add your code here
+    with open(file_path,"a") as file:
+        file.write(f"{player_name}: {score} points\n")
+        print("score saved successfully!")
     #------------------------
-    raise NotImplementedError("This function is not implemented yet.")
+    
     #------------------------
 
 #---------------------------------------
