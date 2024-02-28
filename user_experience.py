@@ -158,7 +158,14 @@ def skip_question(allowed_skips):
     This function checks if the player has any skips available. If so, it decrements the allowed_skips counter and returns True, indicating the question can be skipped. If no skips are available, it returns False. This function should be called before presenting a new question to the player.
     """
     #------------------------
-    # Add your code here
+    if skips < allowed_skips:
+        temp = input("Do you want to skip this question? [Y/N]")
+        if temp.upper() == "Y":
+            skip = skip + 1
+            flag = True
+        elif temp.upper() == "N":
+            flag = False
+    return flag 
     #------------------------
     
     #------------------------
