@@ -65,9 +65,9 @@ def select_random_question():
     category = input("Choose S for Science or H for History: ")
     temp = random.randint(1, 9)
     if category.upper() == "S":
-        question, correct_answeranswer = questions["Science"][temp - 1]
+        question, correct_answer = questions["Science"][temp - 1]
     elif category.upper() == "H":
-        question, correct_answeranswer = questions["History"][temp - 1]
+        question, correct_answer = questions["History"][temp - 1]
     else:
         print("Invalid category choice.")
         return question, correct_answer
