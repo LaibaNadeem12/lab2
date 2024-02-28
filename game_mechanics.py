@@ -29,7 +29,6 @@ def choose_category(categories):
     - str: The chosen category.
     """
     #------------------------
-    categories = ["Science", "History"]
     for i in range(len(categories)):
         print(i,".", categories[i])
     temp = int(input("Enter a given integer to select a category:"))
