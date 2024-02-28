@@ -138,7 +138,14 @@ def fifty_fifty_lifeline(correct_answer, options):
     This function is designed to be used once per game session by a player who chooses to use the 50/50 lifeline. It randomly selects one incorrect answer to keep along with the correct answer and removes the other options.
     """
     #------------------------
-    # Add your code here
+    user_input = input("Do you want to use 50/50 hint? It can only be used once, enter[Y/N]")
+    if user_input.upper() == "Y":
+        temp = random.randint(1, 9)
+        print("Here are two options")
+        hint_list = []
+        hint_list.append(correct_answer)
+        hint_list.append(options[temp])
+    return hint_list
     #------------------------
     
     #------------------------
